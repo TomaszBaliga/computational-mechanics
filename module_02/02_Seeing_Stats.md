@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.11.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -80,6 +80,12 @@ space.
 
 ```{code-cell} ipython3
 type(beers)
+
+
+ibu_series = beers_filled['ibu']
+
+ibu = beers_filled['ibu'].values
+len(ibu)
 ```
 
 ```{code-cell} ipython3
@@ -147,6 +153,8 @@ Let's repeat here the process for extracting and cleaning the two series, and ge
 abv_series = beers['abv']
 abv_clean = abv_series.dropna()
 abv = abv_clean.values
+
+print(abv_series)
 ```
 
 ```{code-cell} ipython3
@@ -154,6 +162,7 @@ abv = abv_clean.values
 ibu_series = beers['ibu']
 ibu_clean = ibu_series.dropna()
 ibu = ibu_clean.values
+ibu
 ```
 
 Let's also repeat a histogram plot for the `abv` variable, but this time choose to plot just 10 bins (you'll see why in a moment).
